@@ -1,0 +1,42 @@
+
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="_csrf" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    </head>
+    <body>
+        <label>Choose field of work</label>
+        <div th:replace = "layouts-data :: show-field-of-work"></div>
+
+        <label>Name of a job</label>
+        <input type="text" id="job-name">
+
+        <label>Description</label>
+        <textarea id="job-description"></textarea>
+
+        <label>Choose location</label>
+        <div th:replace="layouts-data :: show-cities"></div>
+
+
+        <label>Job expiration date</label>
+        <input type="date" id="job-expiration">
+
+        <label>Candidate description</label>
+        <textarea id="candiate-desc"></textarea>
+
+        <input type="hidden" id="employer_Id"  th:value="${id}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <button id="post-job-btn">Post job</button>
+
+
+
+
+        <div th:replace="layouts-data :: get-field-of-work"></div>
+        <div th:replace="layouts-data :: get-cities"></div>
+        <script src="/jquery/insert-job.js"></script>
+    </body>
+</html>

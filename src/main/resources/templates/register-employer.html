@@ -1,0 +1,49 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="_csrf" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+        <link rel="stylesheet" href="css/employer-register-form.css">
+    </head>
+    <body>
+        <div tiles:fragment="content">                      
+                <fieldset>
+                    <legend>Please register</legend>
+                    <div th:if="${param.error}" class="alert alert-error">    
+                        Invalid parameters.
+                    </div>
+                    <div th:if="${param.logout}" class="alert alert-success"> 
+                        You have been logged out.
+                    </div>
+                    <div class="employerRegForm">
+                        <label >Company name</label>
+                        <input type="text" id="companyName" name="companyName"/>     
+                        <!-- Stavi field of work u zaseban fajl i samo ga ubaci ovde i na home-->
+                        <label >Address</label>
+                        <input type="text" id="address" name="password"/>   
+                        <label >Number of employees</label>
+                        <select id="numberOfEmployees">
+                            <option value="20"><20</option>
+                            <option value="21-50">21-50</option>
+                            <option value="51-100"><51-100</option>
+                            <option>101-250</option>
+                            <option>250-500</option>
+                            <option><1000</option>
+                        </select>
+                        <label >Username</label>
+                        <input type="text" id="username" name="username"/>  
+                        <label >Password</label>
+                        <input type="password" id="password" name="password"/>  
+                         <div class="form-actions">
+                        <button id="register-btn">Register</button>
+                          </div>
+                    </div>
+                </fieldset>        
+        </div>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="/jquery/insert-employer.js"></script>
+    </body>
+</html>

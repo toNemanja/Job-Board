@@ -1,0 +1,23 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="show-field-of-work">
+        <input type="text" name="fieldOfWork" list="fieldOfWork" placeholder="Field of work"/>
+        <datalist id="fieldOfWork">
+        </datalist>
+    </div>
+
+    <div th:fragment = "show-cities">
+        <input type="text" name="city" list="cityName" placeholder="Choose city"/>
+        <datalist id="cityName">
+        </datalist>
+    </div>
+
+
+    <div th:fragment="get-cities">
+        <script src="/jquery/get-cities.js"></script>
+    </div>
+
+    <div th:fragment="get-field-of-work">
+        <script src="/jquery/get-field-of-work.js"></script>
+    </div>
+</html>
